@@ -4,4 +4,10 @@ node('linux') {
     stage('Unit Tests') {
         sh "ant -f test.xml -v"
     }
+    stage('Build') {
+    }
+    stage('Deploy') {
+    }
+    stage('Report') {
+    }
 }
