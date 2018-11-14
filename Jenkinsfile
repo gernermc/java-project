@@ -8,7 +8,7 @@ node('linux') {
         sh "ant -f build.xml -v"
     }
     stage('Deploy') {
-        sh "echo "Working with build ${BUILD_NUMBER}""
+        sh "echo ${BUILD_NUMBER}"
     }
     stage('Report') {
     }
