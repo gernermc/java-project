@@ -10,12 +10,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-            sh "ant -f build.xml -v"
+                sh "ant -f build.xml -v"
             }
         }
         stage('Deploy') {
             steps {
-            sh "echo ${BUILD_NUMBER}"
+                sh "echo ${BUILD_NUMBER}"
             }
         }
         stage('Report') {
