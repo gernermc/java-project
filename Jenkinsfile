@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Report') {
             steps {
-                env
+                sh "echo ${BUILD_NUMBER}"
             }
         }
     }
