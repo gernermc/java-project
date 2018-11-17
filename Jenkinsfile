@@ -2,16 +2,25 @@ pipeline {
     agent { label 'linux' }
     stages {
         stage('Unit Tests') {
-            sh "ant -f test.xml -v"
-            junit 'reports/result.xml'
+            steps {
+                git 'https://github.com/gernermc/java-project.git', branch: 'master'
+                sh "ant -f test.xml -v"
+                junit 'reports/result.xml'
+            }
         }
         stage('Build') {
+            steps {
             sh "ant -f build.xml -v"
+            }
         }
         stage('Deploy') {
+            steps {
             sh "echo ${BUILD_NUMBER}"
+            }
         }
         stage('Report') {
+            steps {
+            }
         }
     }
 }
