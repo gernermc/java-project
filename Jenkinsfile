@@ -1,6 +1,5 @@
 pipeline {
     agent { label 'linux' }
-    git url: 'https://github.com/gernermc/java-project.git', branch: 'master'
     stages {
         stage('Unit Tests') {
             sh "ant -f test.xml -v"
