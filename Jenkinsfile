@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "echo ${BUILD_NUMBER}"
+                s3Upload(file:"rectangle-${BUILD_NUMBER}.jar", bucket:"gernermc-assignment9", path:"/workspace/java-pipeline/dist/rectangle-${BUILD_NUMBER}.jar")
             }
         }
         stage('Report') {
