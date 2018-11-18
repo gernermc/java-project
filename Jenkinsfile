@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "echo ${BUILD_NUMBER}"
+                sh "cp rectangle-${BUILD_NUMBER}.jar https://s3.amazonaws.com/gernermc-assignment9/rectangle-${BUILD_NUMBER}.jar"
             }
         }
         stage('Report') {
