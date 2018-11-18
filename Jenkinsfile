@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "aws s3 cp rectangle-${BUILD_NUMBER}.jar s3://gernermc-assignment9/rectangle.jar"
+                sh "aws s3 cp /workspace/java-pipeline/dist/rectangle-${BUILD_NUMBER}.jar s3://gernermc-assignment9/rectangle.jar"
             }
         }
         stage('Report') {
